@@ -8,7 +8,7 @@ privacy.html    privacy policy (a frame only, see below)
 support.html    support page
 styles.css
 script.js       the before/after slider and the gallery colour / black and white switch
-assets/favicon.svg
+assets/icon-*.png, apple-touch-icon.png   the chosen logo (05) at web sizes
 assets/img/     photographs and app screens
 ```
 
@@ -38,3 +38,7 @@ Also:
 ## Images
 
 `assets/img/` is made by `../build_assets.py` from the app's screens and the portraits Mel shared. In the heirloom-agent repo those files are ignored by git. They have to be copied into the website's own repo by hand.
+
+## Design checks
+
+Polished against the Impeccable craft floor and its detector (`impeccable detect`) on Nov 23. The detector went from 17 findings to 1. The one left is a line-height warning (1.15) whose element could not be pinned down; headings, questions and module names were ruled out.
