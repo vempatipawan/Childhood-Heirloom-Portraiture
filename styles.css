@@ -220,7 +220,6 @@ p { margin: 0; text-wrap: pretty; }
 .price { display: flex; align-items: baseline; justify-content: center; gap: 16px; }
 .price-now { font-size: 3.6rem; }
 .price-was { font-family: var(--sans); font-weight: 400; font-size: 1.25rem; color: var(--ink-soft); text-decoration: line-through; text-decoration-thickness: 1px; }
-.countdown { text-align: center; font-weight: 500; color: #7a4a58; margin: -8px 0 24px; font-variant-numeric: tabular-nums; }
 
 /* course lessons and the welcome steps: an open, ruled list */
 .lessons { list-style: none; padding: 0; margin: 36px 0 0; }
@@ -238,3 +237,27 @@ p { margin: 0; text-wrap: pretty; }
 .dates li:last-child { border-bottom: 1px solid var(--line); }
 .dates strong { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; }
 .dates span { color: var(--ink-soft); }
+
+/* patterns taken from the reference sites (see ../INSPIRATION.md) */
+.bar { display: block; text-align: center; padding: 10px 16px; background: var(--night); color: #fff; font-size: 0.92rem; font-weight: 400; text-decoration: none; }
+.bar span { text-decoration: underline; text-decoration-color: var(--gold-lt); text-underline-offset: 0.22em; margin-left: 6px; white-space: nowrap; }
+.bar .ast { color: var(--gold-lt); }
+.btn-price { margin-left: 12px; padding-left: 12px; border-left: 1px solid rgba(255, 255, 255, 0.35); font-variant-numeric: lining-nums; }
+.btn .ast { color: var(--gold-lt); }
+.price-save { font-family: var(--sans); font-size: 0.95rem; font-weight: 500; color: #2f6b4f; background: #e6f3ec; padding: 4px 12px; border-radius: 999px; align-self: center; }
+.price-save .ast { color: #2f6b4f; }
+.promise { text-align: center; margin-top: 18px; font-weight: 400; }
+.ask { margin-top: 28px; text-align: center; color: var(--ink-soft); }
+.num { display: inline-block; font-family: var(--serif); color: var(--gold-lt); margin-right: 6px; }
+.finished-frame { aspect-ratio: 620 / 1341; display: grid; place-items: center; }
+.finished-frame img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 50%; border: 5px solid var(--gold); background: #fff; }
+.strip { background: var(--sky); padding: 28px 22px; }
+.strip-grid { display: grid; gap: 16px; align-items: center; }
+.strip p { color: var(--ink); }
+.strip strong { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; }
+@media (min-width: 720px) {
+  .strip { padding: 30px 40px; }
+  .strip-grid { grid-template-columns: 1fr auto; gap: 32px; }
+}
+.price .ast { font-size: 1.05rem; vertical-align: top; position: relative; top: 0.5em; }
+.price-save .ast, .price-was .ast { font-size: 0.8em; top: 0; vertical-align: super; }
