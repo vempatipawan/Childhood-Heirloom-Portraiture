@@ -1,11 +1,29 @@
-// Before and after: the hidden range input does the work, so it drags, taps and uses arrow keys.
+// Before and after. The hidden range input does the work, so it drags, taps and answers arrow keys.
+// One authored moment: on arrival the divider leans toward the candid and settles back to the middle, once.
 (function () {
   var box = document.getElementById("compare");
   if (!box) return;
   var range = box.querySelector(".compare-range");
+  var touched = false;
   function set(v) { box.style.setProperty("--pos", v + "%"); }
-  range.addEventListener("input", function () { set(range.value); });
+  range.addEventListener("input", function () { touched = true; set(range.value); });
+  ["pointerdown", "keydown"].forEach(function (e) { range.addEventListener(e, function () { touched = true; }); });
   set(range.value);
+
+  var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (still || !window.requestAnimationFrame) return;
+  // Starts and ends at the middle, so nothing is hidden if the animation never runs.
+  var mid = 50, reach = 30, ms = 1700, start = null;
+  function ease(t) { return t === 1 ? 1 : 1 - Math.pow(2, -10 * t); }   // exponential ease-out
+  function step(now) {
+    if (touched) return;
+    if (start === null) start = now;
+    var t = Math.min((now - start) / ms, 1);
+    var v = mid + reach * Math.sin(Math.PI * ease(t));
+    range.value = v; set(v);
+    if (t < 1) requestAnimationFrame(step); else { range.value = mid; set(mid); }
+  }
+  window.addEventListener("load", function () { setTimeout(function () { requestAnimationFrame(step); }, 350); });
 })();
 
 // Gallery: colour or black and white.
