@@ -43,3 +43,20 @@
     });
   });
 })();
+
+// Offer deadline: says how long is left, updated once a minute. Falls back to the written date.
+(function () {
+  var el = document.getElementById("countdown");
+  if (!el) return;
+  var end = new Date(el.dataset.deadline).getTime();
+  var mark = el.querySelector(".ast") ? el.querySelector(".ast").outerHTML : "";
+  function tick() {
+    var left = end - Date.now();
+    if (isNaN(end)) return;
+    if (left <= 0) { el.textContent = "The founding member price has ended."; return; }
+    var d = Math.floor(left / 864e5), h = Math.floor((left % 864e5) / 36e5), m = Math.floor((left % 36e5) / 6e4);
+    var parts = d > 0 ? d + (d === 1 ? " day " : " days ") + h + (h === 1 ? " hour" : " hours") : h + (h === 1 ? " hour " : " hours ") + m + " min";
+    el.innerHTML = "Ends Cyber Monday, November 30. " + parts + " left" + mark;
+  }
+  tick(); setInterval(tick, 60000);
+})();
