@@ -261,3 +261,33 @@ p { margin: 0; text-wrap: pretty; }
 }
 .price .ast { font-size: 1.05rem; vertical-align: top; position: relative; top: 0.5em; }
 .price-save .ast, .price-was .ast { font-size: 0.8em; top: 0; vertical-align: super; }
+
+/* the gift comes first */
+.gift-art { width: 100%; border-radius: 16px; box-shadow: var(--lift); }
+.arrive { margin-top: 40px; display: grid; gap: 28px; }
+.arrive figure { margin: 0; }
+.arrive img { width: 100%; border-radius: var(--radius); }
+.arrive figcaption { margin-top: 16px; color: var(--ink-soft); max-width: 44ch; }
+.arrive strong { display: block; font-family: var(--serif); font-size: 1.6rem; font-weight: 600; line-height: 1.3; color: var(--ink); }
+.made-grid { display: grid; gap: 36px; align-items: center; }
+.made-grid .sub { max-width: 46ch; }
+@media (min-width: 720px) { .arrive { grid-template-columns: 1fr 1fr; gap: 40px; } }
+@media (min-width: 980px) { .made-grid { grid-template-columns: 1fr 0.9fr; gap: 72px; } }
+
+/* three ways in */
+.sub.center { max-width: 58ch; margin-inline: auto; text-align: center; }
+.tiers { margin-top: 40px; display: grid; gap: 20px; align-items: start; }
+.tier { background: #fff; border-radius: 16px; padding: 30px 26px 28px; border: 1px solid #cfdbea; }
+.tier-main { border: 2px solid var(--gold); }
+.tier-flag { display: inline-block; font-size: 0.85rem; font-weight: 500; color: var(--gold-text); background: #f7efdc; padding: 3px 12px; border-radius: 999px; margin-bottom: 12px; }
+.tier h3 { font-size: 1.7rem; }
+.tier-price { font-family: var(--serif); font-weight: 600; font-size: 3rem; line-height: 1.1; margin: 8px 0 6px; font-variant-numeric: lining-nums; }
+.tier-price .ast { font-size: 1rem; vertical-align: top; position: relative; top: 0.5em; }
+.tier-line { color: var(--ink-soft); min-height: 3.2em; }
+.tier ul { list-style: none; padding: 0; margin: 18px 0 24px; display: grid; gap: 10px; }
+.tier li { position: relative; padding-left: 24px; }
+.tier li::before { content: ""; position: absolute; left: 2px; top: 0.62em; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+.btn-line { background: #fff; color: var(--ink); border: 1.5px solid var(--ink); }
+.btn-line:hover { background: var(--sky); }
+.btn-line .ast { color: var(--gold-text); }
+@media (min-width: 900px) { .tiers { grid-template-columns: 1fr 1.08fr 1fr; gap: 24px; } }
