@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The card designs | Childhood Heirloom Portraiture</title>
+<meta name="description" content="Twelve Christmas card designs for your child's heirloom portrait. Add your portrait and see your own child on every one.">
+<meta property="og:title" content="Heirloom Christmas card designs">
+<meta property="og:image" content="assets/img/share.jpg">
+<meta name="theme-color" content="#14213A">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Arizonia&family=Bodoni+Moda:opsz,wght@6..96,500&family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Serif+Display&family=Great+Vibes&family=Gwendolyn:wght@700&family=Mr+Dafoe&family=Outfit:wght@300;400;500;600&family=Pinyon+Script&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="store.css">
+<link rel="stylesheet" href="cards.css">
+</head>
+<body class="has-bar">
+<a class="bar" href="pricing.html"><b>Black Friday:</b> 25 cards $99<sup class="ast">*</sup>, regular $149<sup class="ast">*</sup>, through Cyber Monday, November 30. <span>See the offer</span></a>
+
+<header class="top" id="top">
+  <a class="brand" href="index.html" aria-label="Childhood Heirloom Portraiture, home">
+    <img class="brand-mark" src="assets/icon-96.png" width="44" height="44" alt="">
+    <span class="brand-words"><span class="brand-script">Heirloom</span><span class="brand-caps">Childhood · Portraiture</span></span>
+  </a>
+  <nav class="nav" aria-label="Main">
+    <a href="cards.html" aria-current="page">The cards</a>
+    <a href="pricing.html">Prices</a>
+    <a href="index.html#made">How it’s made</a>
+    <a href="course.html">The course</a>
+    <a href="pricing.html#questions">Questions</a>
+  </nav>
+  <a class="btn btn-ink btn-small" href="pricing.html">See the offer</a>
+</header>
+
+<main class="section" style="padding-top:26px">
+  <div class="wrap">
+    <h1 style="font-size:clamp(2rem,6.4vw,3.2rem)">Heirloom Christmas cards</h1>
+    <p class="sub" style="margin-top:8px">25 printed cards of your child, with envelopes, at your door by December 14<sup class="ast">*</sup>. <strong>$99<sup class="ast">*</sup></strong> through Cyber Monday, regular $149<sup class="ast">*</sup>. Every design comes with a card for Grandma.</p>
+
+    <section class="make" aria-labelledby="make-h">
+      <div>
+        <h2 id="make-h">See your child on every design</h2>
+        <p>Add your child’s heirloom portrait and all twelve cards redraw with it. Type the names and they appear too.</p>
+        <div class="upl" style="margin-top:14px">
+          <input type="file" id="ph1" accept="image/*">
+          <label class="btn btn-ink btn-small" for="ph1">Add your portrait</label>
+          <img class="thumb-me" id="me1" alt="Your portrait" hidden>
+          <button class="linkbtn" id="rm1" type="button" hidden>Remove</button>
+        </div>
+        <div class="upl" style="margin-top:8px">
+          <input type="file" id="ph2" accept="image/*">
+          <label class="linkbtn" for="ph2" style="cursor:pointer">Two children? Add a second portrait for Brother &amp; Sister</label>
+          <img class="thumb-me" id="me2" alt="Your second portrait" hidden>
+          <button class="linkbtn" id="rm2" type="button" hidden>Remove</button>
+        </div>
+        <p class="privacy-note" style="margin-top:12px"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l7 3v6c0 5-3 9-7 11-4-2-7-6-7-11V5z" fill="#2f6b4f"/><path d="M8.5 12l2.5 2.5 4.5-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg><span>Your photo stays on this phone or computer. It is not uploaded or sent anywhere.</span></p>
+        <p class="small" id="msg" role="status" style="margin-top:6px"></p>
+      </div>
+      <div class="fields">
+        <div class="field"><label for="f-child">Your child’s name</label><input id="f-child" autocomplete="off" placeholder="Emma Grace"></div>
+        <div class="field"><label for="f-gma">What your children call Grandma</label><input id="f-gma" autocomplete="off" placeholder="Mimi"></div>
+        <div class="field"><label for="f-family">Your family name, as on the card</label><input id="f-family" autocomplete="off" placeholder="The Hartwell Family"></div>
+        <div class="field"><label for="f-child2">Second child’s name (Brother &amp; Sister)</label><input id="f-child2" autocomplete="off" placeholder="James"></div>
+      </div>
+    </section>
+
+    <div class="chips" role="group" aria-label="Show">
+      <button class="chip is-on" data-f="all" aria-pressed="true">All twelve</button>
+      <button class="chip" data-f="script" aria-pressed="false">Script</button>
+      <button class="chip" data-f="classic" aria-pressed="false">Classic</button>
+      <button class="chip" data-f="bold" aria-pressed="false">Bold</button>
+      <button class="chip" data-f="fav" aria-pressed="false">My favourites</button>
+    </div>
+    <p class="count" id="count"></p>
+    <div class="grid-cards" id="grid"></div>
+    <p class="small center" style="margin-top:34px">Every design: 5&nbsp;x&nbsp;7, printed both sides, heavy stock, white envelopes<sup class="ast">*</sup>. You choose; we make the card and send you a picture of it for your yes.</p>
+  </div>
+</main>
+
+<div class="buybar" role="region" aria-label="Order">
+  <div class="buybar-p"><strong id="bb-name">Pick a design</strong><span><s>$149<sup class="ast">*</sup></s> $99<sup class="ast">*</sup> for 25 cards</span></div>
+  <a class="btn btn-ink" id="bb-go" href="card.html">Choose</a>
+</div>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div><span class="brand-script on-dark">Heirloom</span><p class="foot-name">Childhood Heirloom Portraiture</p></div>
+    <nav aria-label="Footer"><a href="cards.html">The cards</a><a href="pricing.html">Prices</a><a href="course.html">The course</a><a href="christmas.html">Christmas</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a></nav>
+  </div>
+  <p class="foot-note">* Sample wording or figure, shown for approval. Not final.</p>
+  <p class="foot-small">© 2026 Childhood Heirloom Portraiture</p>
+</footer>
+
+<script src="store-config.js"></script>
+<script src="store.js"></script>
+<script src="cards.js"></script>
+<script>
+(function () {
+  var S = CHPStore, C = CHPCards, grid = document.getElementById("grid");
+  var q = new URLSearchParams(location.search);
+  if (q.get("tier")) S.set({ tier: q.get("tier") });
+  var filter = "all";
+  var heart = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>';
+
+  function favs() { return S.get().favs || []; }
+  function build() {
+    var f = favs(), shown = 0;
+    grid.innerHTML = C.list.map(function (d) {
+      var on = f.indexOf(d.id) >= 0;
+      var hide = (filter === "fav" && !on) || (filter !== "all" && filter !== "fav" && d.style !== filter);
+      if (!hide) shown++;
+      return '<article class="tile' + (d.wide ? " wide" : "") + '"' + (hide ? " hidden" : "") + ' data-id="' + d.id + '">' +
+        '<button class="heart" type="button" aria-pressed="' + on + '" aria-label="Save ' + d.name + ' to my favourites">' + heart + "</button>" +
+        '<a class="shade" href="card.html?d=' + d.id + '" aria-label="' + d.name + ': choose this design"><span class="cd-box big" data-design="' + d.id + '" data-side="front"></span></a>' +
+        '<div class="mini" role="group" aria-label="Show the front, Grandma’s card or the back">' +
+          ["front", "gma", "back"].map(function (s, i) { return '<button type="button" class="' + (i ? "" : "is-on") + '" data-side="' + s + '" aria-label="' + ["The family’s card", "Grandma’s card", "The back"][i] + '"><span class="cd-box" data-design="' + d.id + '" data-side="' + s + '"></span></button>'; }).join("") +
+        "</div>" +
+        "<h3>" + d.name + "</h3><p>" + d.note + (d.two ? " Add a second portrait above." : "") + "</p>" +
+        '<a class="btn btn-ink" href="card.html?d=' + d.id + '">Choose this design</a></article>';
+    }).join("");
+    document.getElementById("count").textContent = shown + (shown === 1 ? " design" : " designs") + (filter === "fav" && !shown ? ". Tap a heart to save one." : "");
+    C.drawAll(grid);
+  }
+
+  grid.addEventListener("click", function (e) {
+    var h = e.target.closest(".heart");
+    if (h) {
+      var id = h.closest(".tile").dataset.id, f = favs(), i = f.indexOf(id);
+      if (i >= 0) f.splice(i, 1); else f.push(id);
+      S.set({ favs: f }); h.setAttribute("aria-pressed", i < 0);
+      if (filter === "fav") build();
+      return;
+    }
+    var m = e.target.closest(".mini button");
+    if (m) {
+      var tile = m.closest(".tile"), big = tile.querySelector(".cd-box.big");
+      tile.querySelectorAll(".mini button").forEach(function (b) { b.classList.toggle("is-on", b === m); });
+      big.dataset.side = m.dataset.side; C.draw(big);
+    }
+  });
+  grid.addEventListener("mouseover", function (e) {
+    var t = e.target.closest(".tile"); if (!t) return;
+    document.getElementById("bb-name").textContent = C.byId(t.dataset.id).name;
+    document.getElementById("bb-go").href = "card.html?d=" + t.dataset.id;
+  });
+
+  document.querySelectorAll(".chip").forEach(function (c) {
+    c.addEventListener("click", function () {
+      filter = c.dataset.f;
+      document.querySelectorAll(".chip").forEach(function (o) { o.classList.toggle("is-on", o === c); o.setAttribute("aria-pressed", o === c); });
+      build();
+    });
+  });
+
+  // names
+  var st = S.get();
+  [["f-child", "child"], ["f-gma", "gma"], ["f-family", "family"], ["f-child2", "child2"]].forEach(function (p) {
+    var el = document.getElementById(p[0]); el.value = st[p[1]] || "";
+    var t; el.addEventListener("input", function () { clearTimeout(t); t = setTimeout(function () { var o = {}; o[p[1]] = el.value.trim(); S.set(o); C.drawAll(grid); }, 250); });
+  });
+
+  // portraits: read here, kept here
+  function showMe(n) {
+    var src = S.photo(n), img = document.getElementById("me" + n), rm = document.getElementById("rm" + n);
+    img.hidden = rm.hidden = !src; if (src) img.src = src;
+  }
+  [1, 2].forEach(function (n) {
+    document.getElementById("ph" + n).addEventListener("change", function (e) {
+      var msg = document.getElementById("msg"); msg.textContent = "Putting your portrait on the cards…";
+      S.readFile(e.target.files[0], function (url, err) {
+        if (!url) { msg.textContent = err; return; }
+        S.setPhoto(n, url); showMe(n); C.drawAll(grid);
+        msg.textContent = "Done. That is your child on every design. Nothing has left this device.";
+      });
+    });
+    document.getElementById("rm" + n).addEventListener("click", function () { S.clearPhoto(n); showMe(n); C.drawAll(grid); document.getElementById("msg").textContent = ""; });
+    showMe(n);
+  });
+
+  build();
+})();
+</script>
+</body>
+</html>

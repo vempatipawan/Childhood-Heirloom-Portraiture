@@ -1,0 +1,36 @@
+/* The card designs (drawn by cards.js). A card is 500 x 700 (or 700 x 500) and scaled to its box. */
+.cd-box { display: block; position: relative; aspect-ratio: 5 / 7; overflow: hidden; background: #fff; }
+.cd-box.is-wide { aspect-ratio: 7 / 5; }
+.cd { position: absolute; left: 0; top: 0; width: 500px; height: 700px; transform-origin: 0 0; overflow: hidden; background: #fff; isolation: isolate; line-height: 1.2; color: #26221e; font-family: "Outfit", Arial, sans-serif; }
+.cd.cd-wide { width: 700px; height: 500px; }
+.cd-abs { position: absolute; }
+.cd-c { left: 0; right: 0; text-align: center; }
+.cd-clip { position: absolute; overflow: hidden; isolation: isolate; }
+.cd-ph { position: absolute; overflow: hidden; }
+.cd-ph img { width: 100%; height: 100%; object-fit: cover; display: block; max-width: none; mix-blend-mode: multiply; transform-origin: 50% 0; user-select: none; -webkit-user-drag: none; }
+.cd-caps { position: absolute; left: 0; right: 0; text-align: center; font-family: "Outfit", Arial, sans-serif; font-weight: 500; font-size: 11.5px; letter-spacing: .34em; white-space: nowrap; }
+.cd-caps.cd-static { position: static; }
+.cd-caps sup { font-size: .8em; }
+.cd-fit { display: inline-block; white-space: nowrap; }
+.cd-foil { background: linear-gradient(100deg, #7d5a1e 0%, #b98d3d 14%, #dcbf70 27%, #a9802f 42%, #80601f 56%, #c9a653 72%, #dfc377 84%, #96722a 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent; padding: .22em .32em; margin: -.22em -.32em; }
+.cd-foil.lite { background-image: linear-gradient(100deg, #b8944a 0%, #e6cb80 16%, #fbefc0 30%, #d2ad5c 46%, #b8944a 60%, #efd88f 76%, #fff3c9 88%, #c9a55a 100%); }
+.dafoe { font-family: "Mr Dafoe", cursive; }
+.gv { font-family: "Great Vibes", cursive; }
+.gwen { font-family: "Gwendolyn", cursive; font-weight: 700; }
+.ariz { font-family: "Arizonia", cursive; }
+.abril { font-family: "Abril Fatface", serif; }
+.dms { font-family: "DM Serif Display", serif; }
+.bod { font-family: "Bodoni Moda", serif; font-weight: 500; font-variation-settings: "opsz" 96; }
+.cormi { font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 500; }
+.playi { font-family: "Playfair Display", serif; font-style: italic; font-weight: 500; }
+.out { font-family: "Outfit", Arial, sans-serif; }
+.cd-edge { position: absolute; left: 0; top: 0; width: 700px; height: 92px; transform-origin: 0 0; transform: rotate(-90deg) translateX(-700px); display: flex; align-items: center; justify-content: center; white-space: nowrap; }
+.cd-tartan { background-color: #a02a2c; background-image:
+  repeating-linear-gradient(45deg, rgba(255,255,255,.07) 0 2px, transparent 2px 4px),
+  repeating-linear-gradient(0deg, transparent 0 6px, rgba(244,220,150,.75) 6px 8px, transparent 8px 64px),
+  repeating-linear-gradient(90deg, transparent 0 6px, rgba(244,220,150,.75) 6px 8px, transparent 8px 64px),
+  repeating-linear-gradient(0deg, transparent 0 46px, rgba(255,255,255,.55) 46px 47.5px, transparent 47.5px 64px),
+  repeating-linear-gradient(90deg, transparent 0 46px, rgba(255,255,255,.55) 46px 47.5px, transparent 47.5px 64px),
+  repeating-linear-gradient(0deg, transparent 0 20px, rgba(18,58,40,.62) 20px 40px, transparent 40px 64px),
+  repeating-linear-gradient(90deg, transparent 0 20px, rgba(18,58,40,.62) 20px 40px, transparent 40px 64px); }

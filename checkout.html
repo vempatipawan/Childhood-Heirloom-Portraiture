@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout | Childhood Heirloom Portraiture</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#14213A">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Arizonia&family=Bodoni+Moda:opsz,wght@6..96,500&family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Serif+Display&family=Great+Vibes&family=Gwendolyn:wght@700&family=Mr+Dafoe&family=Outfit:wght@300;400;500;600&family=Pinyon+Script&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="store.css">
+<link rel="stylesheet" href="cards.css">
+</head>
+<body>
+<header class="top" id="top">
+  <a class="brand" href="index.html" aria-label="Childhood Heirloom Portraiture, home">
+    <img class="brand-mark" src="assets/icon-96.png" width="44" height="44" alt="">
+    <span class="brand-words"><span class="brand-script">Heirloom</span><span class="brand-caps">Childhood · Portraiture</span></span>
+  </a>
+  <a class="linkbtn" href="javascript:history.back()">Back</a>
+</header>
+
+<main class="wrap co">
+  <!-- The form collects nothing yet: no action, nothing stored, nothing sent. The pay button goes to the tier's
+       payment link from store-config.js, or to opening.html while there is none. See FOR-THE-DEVS.md. -->
+  <form id="co" novalidate autocomplete="on">
+    <h1 style="font-size:clamp(2rem,6vw,2.8rem)">Checkout</h1>
+    <p class="notice" id="not-open">Ordering opens on Black Friday<sup class="ast">*</sup>. This page shows what you will fill in. Nothing you type here is kept or sent, and nothing is charged.</p>
+
+    <fieldset>
+      <legend>You</legend>
+      <div class="fields">
+        <div class="field"><label for="c-first">First name</label><input id="c-first" autocomplete="given-name"></div>
+        <div class="field"><label for="c-last">Last name</label><input id="c-last" autocomplete="family-name"></div>
+        <div class="field" style="grid-column:1/-1"><label for="c-email">Email, for your lessons, your card picture and tracking</label><input id="c-email" type="email" autocomplete="email" inputmode="email"></div>
+      </div>
+    </fieldset>
+
+    <fieldset class="needs-cards">
+      <legend>Where your cards go</legend>
+      <p class="small" style="margin:-4px 0 10px">US addresses only<sup class="ast">*</sup>.</p>
+      <div class="fields">
+        <div class="field" style="grid-column:1/-1"><label for="a-street">Street address</label><input id="a-street" autocomplete="address-line1"></div>
+        <div class="field" style="grid-column:1/-1"><label for="a-apt">Apartment, suite (optional)</label><input id="a-apt" autocomplete="address-line2"></div>
+      </div>
+      <div class="row3" style="margin-top:10px">
+        <div class="field"><label for="a-city">City</label><input id="a-city" autocomplete="address-level2"></div>
+        <div class="field"><label for="a-state">State</label><select id="a-state" autocomplete="address-level1"><option value="">State</option></select></div>
+        <div class="field"><label for="a-zip">ZIP code</label><input id="a-zip" autocomplete="postal-code" inputmode="numeric"></div>
+      </div>
+    </fieldset>
+
+    <fieldset class="needs-cards">
+      <legend>Grandma’s card</legend>
+      <p class="small" style="margin:-4px 0 10px">We mail her card straight to her<sup class="ast">*</sup>. Leave it blank to have it come with yours.</p>
+      <div class="fields">
+        <div class="field"><label for="g-name">Her name, for the envelope</label><input id="g-name" autocomplete="off"></div>
+        <div class="field"><label for="g-street">Her street address</label><input id="g-street" autocomplete="off"></div>
+        <div class="field"><label for="g-city">City</label><input id="g-city" autocomplete="off"></div>
+        <div class="field"><label for="g-zip">State and ZIP</label><input id="g-zip" autocomplete="off"></div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Your yes</legend>
+      <label class="tick needs-cards"><input type="checkbox" id="t-print"><span>I am happy for my finished portrait to go to the printer for my order. It is used for nothing else and deleted 14 days after my cards arrive<sup class="ast">*</sup>.</span></label>
+      <label class="tick"><input type="checkbox" id="t-terms"><span>I have read the <a href="pricing.html#promises">two promises</a> and the <a href="privacy.html">privacy page</a>.</span></label>
+    </fieldset>
+
+    <p class="actions" style="margin-top:24px"><button class="btn btn-ink btn-big btn-wide" type="submit" id="pay">Pay $99</button></p>
+    <p class="mini-promise"><span>Love your portrait or your money back<sup class="ast">*</sup></span><span class="needs-cards">At your door by December 14, or your money back<sup class="ast">*</sup></span></p>
+    <p class="small" style="margin-top:10px">Payment is taken by our payment provider in Mel’s name<sup class="ast">*</sup>. We never see your card number.</p>
+  </form>
+
+  <aside class="co-sum" aria-label="Your order">
+    <h2 style="font-size:1.7rem">Your order</h2>
+    <div class="needs-cards" style="margin-top:14px">
+      <div class="co-pre" id="pre">
+        <div><div class="cd-box" id="pre-f" data-side="front"></div><p class="small center">Your card</p></div>
+        <div><div class="cd-box" id="pre-g" data-side="gma"></div><p class="small center">Grandma’s card</p></div>
+      </div>
+      <p style="margin-top:10px"><strong id="s-design">Gilded Script</strong> · <a href="#" id="s-change">change</a></p>
+      <p class="small" id="s-names"></p>
+    </div>
+
+    <ul class="lines" id="lines" style="margin-top:16px"></ul>
+
+    <div class="needs-cards">
+      <div class="group" style="margin-top:16px">
+        <h2>More cards</h2>
+        <div class="stepper"><button type="button" id="minus" aria-label="25 fewer">−</button><output id="qty">25 cards</output><button type="button" id="plus" aria-label="25 more">+</button></div>
+      </div>
+      <div class="group">
+        <h2>Add with one tap</h2>
+        <label class="opt" id="opt-mailed"><input type="checkbox" data-add="mailed"><span><strong>Addressed and mailed for you</strong></span><span class="amt" id="amt-mailed">$59</span></label>
+        <label class="opt"><input type="checkbox" data-add="frame"><span><strong>Framed 8&nbsp;x&nbsp;10 for the other Grandma</strong></span><span class="amt">$79<sup class="ast">*</sup></span></label>
+        <label class="opt"><input type="checkbox" data-add="gmaCard"><span><strong>One more Grandma card</strong></span><span class="amt">$9<sup class="ast">*</sup></span></label>
+      </div>
+    </div>
+
+    <div class="total"><span>Total</span><strong id="total">$99</strong></div>
+    <p class="small" data-bf-only>Black Friday prices through Cyber Monday, November 30<sup class="ast">*</sup>.</p>
+
+    <div class="seal" style="margin-top:18px;grid-template-columns:1fr;padding:18px">
+      <div><h3 style="font-size:1.25rem">The Portrait Promise</h3><p style="font-size:.92rem">If you don’t love your portrait, write within 14 days<sup class="ast">*</sup> and we refund every dollar, before anything is printed<sup class="ast">*</sup>.</p></div>
+      <div class="needs-cards"><h3 style="font-size:1.25rem">The In-Time Promise</h3><p style="font-size:.92rem">Portrait in by December 4<sup class="ast">*</sup>, cards at your door by December 14<sup class="ast">*</sup>, or your money back and the cards are yours<sup class="ast">*</sup>.</p></div>
+    </div>
+  </aside>
+</main>
+
+<footer class="foot">
+  <p class="foot-note">* Sample wording or figure, shown for approval. Not final.</p>
+  <p class="foot-small">© 2026 Childhood Heirloom Portraiture · <a href="privacy.html" style="color:inherit">Privacy</a> · <a href="support.html" style="color:inherit">Support</a></p>
+</footer>
+
+<script src="store-config.js"></script>
+<script src="store.js"></script>
+<script src="cards.js"></script>
+<script>
+(function () {
+  var S = CHPStore, C = CHPCards, Cf = CHPConfig;
+  var q = new URLSearchParams(location.search);
+  if (q.get("tier")) S.set({ tier: q.get("tier") });
+  var st = S.get(), tier = st.tier || "set";
+  if (!Cf.tiers[tier] || tier === "portrait") tier = "set";
+  S.set({ tier: tier });
+  var cards = !!Cf.tiers[tier].cards;
+  document.querySelectorAll(".needs-cards").forEach(function (el) { el.hidden = !cards; });
+
+  // states
+  var sel = document.getElementById("a-state");
+  "AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY".split(" ").forEach(function (s) { var o = document.createElement("option"); o.textContent = s; sel.appendChild(o); });
+
+  if (cards) {
+    var des = C.byId(st.design || "gilded-script");
+    ["pre-f", "pre-g"].forEach(function (i) { document.getElementById(i).dataset.design = des.id; });
+    if (des.wide) document.getElementById("pre").classList.add("wide");
+    C.drawAll(document.getElementById("pre"));
+    document.getElementById("s-design").textContent = des.name;
+    document.getElementById("s-change").href = "card.html?d=" + des.id;
+    var n = [st.child, st.gma && ("Grandma’s card: " + st.gma), st.family].filter(Boolean).join(" · ");
+    document.getElementById("s-names").textContent = n || "Type the names on the card page, or tell us after you order.";
+  }
+
+  document.querySelectorAll("[data-add]").forEach(function (c) {
+    c.checked = !!(S.get().addons || {})[c.dataset.add];
+    c.addEventListener("change", function () { var a = S.get().addons || {}; a[c.dataset.add] = c.checked; S.set({ addons: a }); paint(); });
+  });
+  function setQty(d) { var b = Cf.tiers[tier].cards, v = Math.min(200, Math.max(b, (S.get().qty || b) + d)); S.set({ qty: v }); paint(); }
+  document.getElementById("minus").addEventListener("click", function () { setQty(-25); });
+  document.getElementById("plus").addEventListener("click", function () { setQty(25); });
+
+  function paint() {
+    var o = S.order();
+    document.getElementById("lines").innerHTML = o.lines.map(function (l) { return "<li><span>" + l.name + "</span><span>" + S.money(l.amount) + "</span></li>"; }).join("");
+    document.getElementById("total").textContent = S.money(o.total);
+    document.getElementById("pay").textContent = "Pay " + S.money(o.total);
+    if (cards) {
+      document.getElementById("qty").textContent = o.qty + " cards";
+      document.getElementById("minus").disabled = o.qty <= Cf.tiers[tier].cards;
+      document.getElementById("opt-mailed").hidden = tier === "collection";
+      document.getElementById("amt-mailed").textContent = S.money(Cf.addons.mailed.price * o.qty / 25);
+    }
+  }
+  paint();
+
+  var link = Cf.payLinks && Cf.payLinks[tier];
+  document.getElementById("not-open").hidden = !!link;
+  // Nothing typed here is stored or sent. The button only moves on: to the payment link once one exists
+  // (the developers pass the order there), or to the "opens Black Friday" page.
+  document.getElementById("co").addEventListener("submit", function (e) {
+    e.preventDefault();
+    location.href = S.payHref(tier);
+  });
+})();
+</script>
+</body>
+</html>
