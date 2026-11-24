@@ -29,7 +29,10 @@ Search the files for `todo`. Every place that still needs a real answer is marke
 
 Also:
 
-- The offer block names Cyber Monday, November 30. Change it after that date.
+- Rebuilt on Nov 24 around the Heirloom Christmas Card Set (25 printed cards, $179*). The offer and every sample value come from `launch/offer.md` in the heirloom-agent repo. Samples carry a gold asterisk in place of the old yellow `todo` boxes.
+- At midnight Eastern on November 30 the prices change ($49 to $69, $179 to $219, $349 to $399) and the two founding bonuses come off the page. The printed tiers come off when the 50 orders are gone or after December 4.
+- Three links are placeholders, marked `data-needs-approval`: the checkout link (points at `welcome.html`), and the web app link (points at `support.html#open`).
+- The phone layout was checked on Nov 24 in a 390 pixel frame: home, Christmas and welcome pages.
 - App Store and Google Play badges go in the footer once each listing is live. There is a comment marking the place.
 - The four app screens come from the design set, not from the shipping build. Recapture them from the build so every label matches.
 - The before and after in the hero is the pair from the app's Home screen. A site that says before and after needs a true pair; confirm with Mel.

@@ -291,3 +291,48 @@ p { margin: 0; text-wrap: pretty; }
 .btn-line:hover { background: var(--sky); }
 .btn-line .ast { color: var(--gold-text); }
 @media (min-width: 900px) { .tiers { grid-template-columns: 1fr 1.08fr 1fr; gap: 24px; } }
+
+/* the stack: what is in the set, each line with what it is worth */
+.stack { list-style: none; padding: 0; margin: 44px auto 0; max-width: 780px; border-top: 1px solid #cfdbea; }
+.stack li { display: grid; grid-template-columns: 1fr auto; column-gap: 22px; align-items: baseline; padding: 22px 0; border-bottom: 1px solid #cfdbea; }
+.stack h3 { font-size: 1.45rem; }
+.stack p { grid-column: 1; margin-top: 6px; color: var(--ink-soft); max-width: 56ch; }
+.worth { font-family: var(--serif); font-weight: 600; font-size: 1.45rem; font-variant-numeric: lining-nums tabular-nums; white-space: nowrap; color: var(--gold-text); }
+.stack-sum h3, .stack-sum .worth { font-size: 1.7rem; color: var(--ink); }
+.founding { max-width: 780px; margin: 36px auto 0; background: #fff; border: 2px solid var(--gold); border-radius: 16px; padding: 26px 24px 6px; }
+.founding .tier-flag { margin-bottom: 0; }
+.founding .stack { margin-top: 12px; border-top: 0; }
+.founding .stack li { border-color: var(--line); }
+.founding .stack li:last-child { border-bottom: 0; }
+.buy { text-align: center; margin-top: 44px; }
+.buy .price { margin: 0 0 6px; }
+.buy-note { color: var(--ink-soft); margin-bottom: 24px; }
+.buy-limit { max-width: 54ch; margin: 24px auto 0; color: var(--ink-soft); }
+.promises { max-width: 980px; margin: 64px auto 0; display: grid; gap: 34px; }
+.promises article { border-top: 2px solid var(--gold); padding-top: 20px; }
+.promises p { margin-top: 10px; color: var(--ink-soft); }
+.dates-offer { max-width: 780px; margin: 56px auto 0; }
+.dates-offer li { border-color: #cfdbea; }
+.add-head { margin-top: 72px; }
+.stack-plain { margin-top: 24px; border-color: var(--line); }
+.stack-plain li { border-color: var(--line); }
+.arrive .frame-oval { width: min(380px, 78%); }
+@media (min-width: 720px) {
+  .promises { grid-template-columns: 1fr 1fr; gap: 48px; }
+  .founding { padding: 30px 36px 8px; }
+}
+@media (max-width: 520px) {
+  .dates li { grid-template-columns: 1fr; gap: 2px; }
+}
+
+/* phone reading: descriptions use the full width, buttons never break, long addresses wrap */
+.stack p { grid-column: 1 / -1; }
+.btn { white-space: nowrap; }
+.btn-wide, .hero .btn { white-space: normal; text-align: center; }
+.mail { overflow-wrap: anywhere; }
+@media (max-width: 420px) {
+  .top { padding-inline: 16px; gap: 10px; }
+  .btn-small { padding: 0 16px; }
+  .tier { padding: 26px 20px 24px; }
+  .founding { padding: 22px 18px 4px; }
+}
